@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>training</title>
+    <style>
+        .keys{
+            color: rgb(13, 14, 12);
+            border:solid rgb(60, 153, 51);
+        }
+        .ram{
+            text-align: center;
+            position: relative;
+        }
+        
+    </style>
+   
+
+</head>
+<body>
+   
+    <table border="2">
+        <thead>
+            <tr><td colspan="4" class="ram">Ram Nisanth Calculator</td> </tr>
+            <tr>
+            <td colspan="3"><input type="text" id="result"></td></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><button class="keys" onclick="dis('1')">1</button></th>
+               <th> <button class="keys" onclick="dis('2')">2</button></th>
+               <th> <button class="keys" onclick="dis('3')">3</button></th>
+               <th><button class="keys" onclick="dis('+')">+</button></th>
+            </tr>
+            <tr>
+                <th> <button class="keys" onclick="dis('4')">4</button></th>
+                    <th> <button class="keys" onclick="dis('5')">5</button></th>
+                        <th> <button class="keys" onclick="dis('6')">6</button></th>
+                            <th> <button class="keys" onclick="dis('-')">-</button></th>
+            </tr>
+            <tr>
+                <th> <button class="keys" onclick="dis('7')">7</button></th>
+                    <th> <button class="keys" onclick="dis('8')">8</button></th>
+                        <th> <button class="keys" onclick="dis('9')">9</button></th>
+                            <th> <button class="keys" onclick="dis('*')">*</button></th>
+
+            </tr>
+            <tr>
+                <th> <button class="keys" onclick="dis('/')">/</button></th>
+                    <th> <button class="keys" onclick="dis('0')">0</button></th>
+                        <th> <button class="keys" onclick="clear()">cc</button></th>
+                            <th> <button class="keys" onclick="calculate()">=</button></th>
+
+            </tr>
+           
+        </tbody>
+    </table>
+
+</body>
+
+
+<script type="text/javascript">
+var flag=false;
+   function clear()
+   {
+    document.getElementById("result").value = "";  
+   }
+   function calculate(){
+       flag=true;
+       let x=document.getElementById("result").value;
+       let y=eval(x);
+       document.getElementById("result").value=y;
+   }
+   function dis(val){
+       if(flag)
+       {
+           clear();
+           flag=false;
+       }
+       document.getElementById("result").value+=val;
+   }
+</script>
+</html>
